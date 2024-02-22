@@ -1,7 +1,5 @@
 #include "socket_utils.h"
 
-/* https://opensource.com/article/19/4/interprocess-communication-linux-networking */
-
 int main() {
     // create socket 
     /* In Unix-like file systems, everything is treated as a file; regular files, directories, devices, sockets, etc.*/
