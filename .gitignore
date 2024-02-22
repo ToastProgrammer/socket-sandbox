@@ -1,3 +1,6 @@
+# Project
+.vscode
+
 # Prerequisites
 *.d
 
@@ -33,3 +36,13 @@
 
 # CMake
 build
+CMakeFiles
+CmakeCache.txt
+*.cmake
+
+## Ninja
+.ninja*
+*.ninja
+
+## Dart
+DartConfiguration.tcl
