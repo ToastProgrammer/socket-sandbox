@@ -28,14 +28,13 @@ int main() {
     client_sock_fd = accept(server_sock_fd, NULL, NULL);
 
     send(client_sock_fd, out_buf, sizeof(out_buf), 0);
-    // Recieve data from server
 
+    // Recieve data from server
     char in_buf[256];
     recv(server_sock_fd, in_buf, sizeof(in_buf), 0);
 
-    puts("Client completed successfully and the connection will now close.");
+    puts("Server completed successfully and the connection will now close.");
     close(server_sock_fd);      /* close the connection */
 
     return 0;
-  return 0;
 }
