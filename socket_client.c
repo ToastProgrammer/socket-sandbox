@@ -16,8 +16,13 @@ int main() {
     struct sockaddr_in server_addr;
 
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(9002); 
+    server_addr.sin_port = htons(9002);
+    
+    #ifdef _WIN32
     server_addr.sin_addr.S_un.S_addr = INADDR_ANY;
+    #else
+    server_addr.sin_addr.s_addr = INADDR_ANY;
+    #endif
 
     // Connect to server address (IP and Port)
     /* connect() returns -1 if connection fails */

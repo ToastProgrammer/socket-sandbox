@@ -14,9 +14,14 @@ int main() {
     struct sockaddr_in server_addr;
 
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(9002); 
+    server_addr.sin_port = htons(9002);
+    
+    #ifdef _WIN32
     server_addr.sin_addr.S_un.S_addr = INADDR_ANY;
-
+    #else
+    server_addr.sin_addr.s_addr = INADDR_ANY;
+    #endif
+    
     // Bind server socket to address (IP and Port)
     /* bind() returns -1 if binding fails */
     if (bind(server_sock_fd, (struct sockaddr*) &server_addr, sizeof(server_addr)) < 0) exit_report("Server could not bind to address.");
